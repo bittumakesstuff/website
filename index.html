@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Space For Anuja Roy 💖</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #FFF0F5 0%, #F3E8FF 50%, #FFE4E6 100%);
+            background-attachment: fixed;
+            color: #4A4054;
+            overflow-x: hidden;
+        }
+
+        .font-cursive {
+            font-family: 'Sacramento', cursive;
+        }
+
+        .font-heading {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* Glassmorphism styling */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 10px 30px -5px rgba(236, 172, 200, 0.25),
+                        0 4px 14px rgba(192, 168, 226, 0.18);
+        }
+
+        /* Floating ambient glow blobs */
+        .ambient-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.65;
+            animation: floatSlow 14s infinite ease-in-out alternate;
+        }
+
+        .blob-1 {
+            width: 340px;
+            height: 340px;
+            background: #FFD1DC;
+            top: -50px;
+            left: -50px;
+        }
+
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: #E9D5FF;
+            bottom: 5%;
+            right: -80px;
+            animation-delay: -5s;
+        }
+
+        .blob-3 {
+            width: 300px;
+            height: 300px;
+            background: #FBCFE8;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -9s;
+        }
+
+        @keyframes floatSlow {
+            0% { transform: translateY(0px) rotate(0deg) scale(1); }
+            50% { transform: translateY(-30px) rotate(8deg) scale(1.06); }
+            100% { transform: translateY(20px) rotate(-8deg) scale(0.96); }
+        }
+
+        /* Floating heart and star particles animation */
+        .floating-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            animation: floatUpAndFade 2.5s ease-out forwards;
+        }
+
+        @keyframes floatUpAndFade {
+            0% {
+                transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translate(calc(-50% + var(--dx)), calc(-50% - var(--dy))) scale(var(--scale)) rotate(var(--rot));
+                opacity: 0;
+            }
+        }
+
+        /* Soft Pulsing Button Glow */
+        .btn-glow {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(244, 114, 182, 0.45);
+        }
+
+        .btn-glow:active {
+            transform: translateY(1px);
+        }
+
+        /* Custom Checkbox Animation */
+        .checklist-item {
+            transition: all 0.25s ease;
+        }
+        .checklist-item:hover {
+            transform: translateX(4px);
+        }
+        .checklist-item.completed {
+            background: rgba(220, 252, 231, 0.85);
+            border-color: #86EFAC;
+            text-decoration: line-through;
+            color: #64748B;
+        }
+
+        /* Smooth Quote & Reason Transition */
+        .content-transition {
+            transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+        }
+        .content-hidden {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF0F5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #F472B6;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E11D48;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-10 px-4 sm:px-6 lg:px-8 relative selection:bg-pink-200 selection:text-pink-800">
+
+    <!-- Ambient Glowing Shapes -->
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+
+    <div class="max-w-4xl mx-auto relative z-10 space-y-10">
+
+        <!-- 1. HEADER / HERO SECTION -->
+        <header class="text-center space-y-5 pt-2">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-100/90 text-pink-700 text-sm font-semibold tracking-wide border border-pink-200 shadow-sm backdrop-blur-sm animate-bounce">
+                <i class="fa-solid fa-crown text-amber-400 text-xs"></i>
+                <span>A Page Made Extra Special For You</span>
+                <i class="fa-solid fa-sparkles text-pink-500 text-xs"></i>
+            </div>
+            
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 tracking-tight leading-tight">
+                Hey <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-rose-500">Anuja Roy</span>, <br class="hidden sm:inline"/>You Are Pure Sunshine! 👑✨
+            </h1>
+
+            <div class="glass-card rounded-3xl p-6 sm:p-8 max-w-2xl mx-auto text-center relative overflow-hidden border-pink-100">
+                <p class="text-slate-600 text-lg leading-relaxed relative z-10">
+                    Take a pause, drop your shoulders, and relax your jaw. This little corner of the internet is built just to remind you how deeply appreciated, loved, and wonderful you are!
+                </p>
+            </div>
+        </header>
+
+        <!-- 2. SCIENTIFICALLY PROVEN FACT (FEATURED STAT CARD) -->
+        <section class="glass-card rounded-3xl p-6 sm:p-10 border-pink-200 relative overflow-hidden shadow-xl text-center">
+            <!-- Decorative Background Badge -->
+            <div class="absolute -right-8 -top-8 w-40 h-40 bg-pink-100 rounded-full blur-2xl pointer-events-none opacity-60"></div>
+            
+            <div class="max-w-2xl mx-auto space-y-5 relative z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-100 text-amber-800 text-xs sm:text-sm font-bold border border-amber-200 uppercase tracking-wider">
+                    <i class="fa-solid fa-microscope text-amber-600"></i> Certified Fact &amp; Official Finding
+                </div>
+
+                <div class="py-2">
+                    <span class="font-heading text-6xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600">
+                        101%
+                    </span>
+                    <p class="text-xs uppercase font-bold text-pink-400 tracking-widest mt-1">Global Consensus &amp; Unanimous Agreement</p>
+                </div>
+
+                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-800 leading-snug">
+                    According to 101% of all research...
+                </h2>
+
+                <div class="bg-gradient-to-r from-pink-500 via-rose-400 to-purple-500 text-white rounded-2xl p-6 shadow-lg transform transition hover:scale-[1.01]">
+                    <p class="text-xl sm:text-2xl font-bold leading-relaxed">
+                        "People named <span class="underline decoration-wavy decoration-yellow-300">ANUJA ROY</span> are literally the strongest, kindest, and most amazing person to ever walk the earth!" 🌍👑✨
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-3 pt-2 text-xs font-semibold text-slate-500">
+                    <span class="px-3 py-1.5 bg-white/80 rounded-full border border-pink-100 shadow-sm">
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Peer Reviewed
+                    </span>
+                    <span class="px-3 py-1.5 bg-white/80 rounded-full border border-pink-100 shadow-sm">
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> Universally True
+                    </span>
+                    <span class="px-3 py-1.5 bg-white/80 rounded-full border border-pink-100 shadow-sm">
+                        <i class="fa-solid fa-check text-green-500 mr-1"></i> 0% Room for Debate
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. "REASONS WHY ANUJA IS AMAZING" GENERATOR -->
+        <section class="glass-card rounded-3xl p-6 sm:p-8 text-center border-purple-100 relative shadow-lg">
+            <div class="max-w-xl mx-auto space-y-6">
+                <div class="inline-block p-3 bg-purple-100 rounded-2xl text-purple-600 mb-1">
+                    <i class="fa-solid fa-heart-circle-bolt text-2xl"></i>
+                </div>
+                
+                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-800">
+                    Why Anuja Is 100% Awesome
+                </h2>
+                
+                <!-- Generator Box -->
+                <div class="bg-white/80 rounded-2xl p-8 min-h-[150px] flex items-center justify-center border border-purple-100 shadow-inner relative overflow-hidden">
+                    <p id="reasonText" class="content-transition text-xl sm:text-2xl font-medium text-slate-700 italic leading-relaxed">
+                        "Anuja has an incredible inner resilience that brightens up every room she steps into."
+                    </p>
+                </div>
+
+                <div class="pt-2 flex flex-wrap gap-4 justify-center">
+                    <button id="reasonBtn" onclick="generateReason()" class="btn-glow px-7 py-3.5 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold rounded-2xl shadow-lg flex items-center gap-3 text-base">
+                        <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+                        <span>Show Another Reason!</span>
+                    </button>
+                    <button onclick="triggerHeartBurst(event)" class="btn-glow px-6 py-3.5 bg-white text-pink-600 font-semibold rounded-2xl border border-pink-200 hover:bg-pink-50 shadow-sm flex items-center gap-2">
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <span>Send Extra Love &amp; Sparkles</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. COZY CHECK-IN / SELF-CARE CHECKLIST -->
+        <section class="glass-card rounded-3xl p-6 sm:p-8 border-pink-100">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="p-3 bg-pink-100 rounded-2xl text-pink-600">
+                        <i class="fa-solid fa-mug-saucer text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-heading text-2xl font-bold text-slate-800">Anuja's Cozy Check-In</h2>
+                        <p class="text-xs text-slate-500">Gentle self-care reminders for your day</p>
+                    </div>
+                </div>
+
+                <!-- Progress Pill -->
+                <div class="flex items-center gap-2 bg-white/90 px-4 py-2 rounded-2xl border border-pink-100 shadow-sm">
+                    <i class="fa-solid fa-battery-half text-pink-500"></i>
+                    <span id="checklistProgress" class="text-xs font-bold text-slate-700">0 of 5 completed</span>
+                </div>
+            </div>
+
+            <!-- Custom Progress Bar -->
+            <div class="w-full bg-pink-100/70 rounded-full h-3 mb-6 overflow-hidden p-0.5 border border-pink-200/50">
+                <div id="progressBar" class="bg-gradient-to-r from-pink-400 to-purple-500 h-full rounded-full transition-all duration-500 ease-out" style="width: 0%"></div>
+            </div>
+
+            <div id="checklistContainer" class="space-y-3">
+                <!-- Items rendered dynamically by JS -->
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-pink-100/80 flex justify-between items-center text-xs text-slate-500">
+                <span>Your progress automatically saves!</span>
+                <button onclick="resetChecklist()" class="text-pink-500 hover:text-pink-600 font-semibold hover:underline">
+                    Reset Checklist
+                </button>
+            </div>
+        </section>
+
+        <!-- 5. REASSURANCE LETTER BOX -->
+        <section class="glass-card rounded-3xl p-8 sm:p-10 border-rose-100 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-4 -mr-4 text-pink-200 opacity-25 text-9xl font-cursive pointer-events-none">
+                Always
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4 relative z-10">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center font-bold text-lg">
+                        💌
+                    </div>
+                    <div>
+                        <h3 class="font-heading text-xl font-bold text-slate-800">A Loving Reminder For Anuja</h3>
+                        <p class="text-xs text-slate-400">Keep this in mind today...</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3 text-slate-600 text-base leading-relaxed bg-white/70 p-6 rounded-2xl border border-rose-100 shadow-sm">
+                    <p>
+                        On days when things feel busy, overwhelming, or just plain exhausting, remember that you don't have to carry the whole world on your shoulders.
+                    </p>
+                    <p>
+                        Take things one single step at a time. Give yourself grace, rest without feeling guilty, treat yourself to something nice, and remember that you are deeply cared for!
+                    </p>
+                    <p class="font-semibold text-rose-600 pt-2">
+                        You are resilient, marvelous, and truly one of a kind. Keep shining, Anuja! ✨💖
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FLOATING ACTION BUTTON: BURST OF LOVE -->
+        <div class="text-center pt-2 pb-8">
+            <button onclick="triggerHeartBurst(event)" class="btn-glow px-8 py-4 bg-gradient-to-r from-pink-500 via-rose-400 to-purple-500 text-white font-extrabold text-lg rounded-full shadow-xl flex items-center gap-3 mx-auto hover:scale-105 transform transition">
+                <i class="fa-solid fa-heart-pulse animate-pulse"></i>
+                <span>Click for Extra Sparkles for Anuja! 💖</span>
+            </button>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="text-center text-xs text-slate-400 pb-6">
+            <p>Made with warmth &amp; endless support for Anuja Roy 🌸</p>
+        </footer>
+
+    </div>
+
+    <script>
+        /* =========================================
+           1. REASONS WHY ANUJA IS AMAZING GENERATOR
+           ========================================= */
+        const amazingReasons = [
+            "Anuja has an incredible inner strength that brightens up every room she steps into.",
+            "Her sense of humor and warmth can instantly turn a bad day into a good one.",
+            "According to top scientists, Anuja's smile holds enough positive energy to power a small city.",
+            "She is resilient, thoughtful, and endlessly caring towards the people around her.",
+            "Even on her quietest days, Anuja brings a special kind of magic everywhere she goes.",
+            "She tackles challenges with courage and grace—even when she doesn't realize it!",
+            "Her presence is a cozy comfort, and the world is genuinely better with her in it.",
+            "Anuja possesses a rare combination of pure kindness and unshakeable determination.",
+            "She deserves all the tea, chocolates, cozy blankets, and happiest moments in the world."
+        ];
+
+        let currentReasonIndex = 0;
+
+        function generateReason() {
+            const textEl = document.getElementById('reasonText');
+            
+            // Fade out
+            textEl.classList.add('content-hidden');
+
+            setTimeout(() => {
+                let newIndex;
+                do {
+                    newIndex = Math.floor(Math.random() * amazingReasons.length);
+                } while (newIndex === currentReasonIndex && amazingReasons.length > 1);
+                
+                currentReasonIndex = newIndex;
+                textEl.textContent = `"${amazingReasons[currentReasonIndex]}"`;
+                
+                // Fade back in
+                textEl.classList.remove('content-hidden');
+            }, 300);
+
+            // Small particle pop
+            const btn = document.getElementById('reasonBtn');
+            const rect = btn.getBoundingClientRect();
+            createParticle(rect.left + rect.width / 2, rect.top + rect.height / 2);
+        }
+
+
+        /* =========================================
+           2. COZY CHECK-IN / CHECKLIST LOGIC
+           ========================================= */
+        const defaultChecklist = [
+            { id: 1, text: "Drank a refreshing glass of water or hot tea 🍵", done: false },
+            { id: 2, text: "Wrapped up in a warm, cozy blanket 🧺", done: false },
+            { id: 3, text: "Listened to a song that makes you smile 🎧", done: false },
+            { id: 4, text: "Took a well-deserved break to just rest 💤", done: false },
+            { id: 5, text: "Reminded yourself that you're doing great 👑", done: false }
+        ];
+
+        let checklist = JSON.parse(localStorage.getItem('anuja_care_checklist')) || defaultChecklist;
+
+        function renderChecklist() {
+            const container = document.getElementById('checklistContainer');
+            container.innerHTML = '';
+
+            let completedCount = 0;
+
+            checklist.forEach(item => {
+                if (item.done) completedCount++;
+
+                const div = document.createElement('div');
+                div.className = `checklist-item flex items-center gap-3 p-3.5 rounded-2xl border cursor-pointer select-none ${
+                    item.done 
+                    ? 'completed border-green-200' 
+                    : 'bg-white/85 border-pink-100 hover:border-pink-300'
+                }`;
+                div.onclick = () => toggleChecklistItem(item.id);
+
+                div.innerHTML = `
+                    <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
+                        item.done ? 'bg-emerald-500 border-emerald-500 text-white' : 'border-pink-300 bg-white'
+                    }">
+                        ${item.done ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+                    </div>
+                    <span class="text-sm sm:text-base font-semibold ${item.done ? 'line-through text-slate-400' : 'text-slate-700'}">
+                        ${item.text}
+                    </span>
+                `;
+                container.appendChild(div);
+            });
+
+            const percentage = Math.round((completedCount / checklist.length) * 100);
+            document.getElementById('checklistProgress').textContent = `${completedCount} of ${checklist.length} completed`;
+            document.getElementById('progressBar').style.width = `${percentage}%`;
+
+            localStorage.setItem('anuja_care_checklist', JSON.stringify(checklist));
+        }
+
+        function toggleChecklistItem(id) {
+            checklist = checklist.map(item => item.id === id ? { ...item, done: !item.done } : item);
+            renderChecklist();
+        }
+
+        function resetChecklist() {
+            checklist = defaultChecklist.map(item => ({ ...item, done: false }));
+            renderChecklist();
+        }
+
+
+        /* =========================================
+           3. FLOATING HEARTS & SPARKLES PARTICLE SYSTEM
+           ========================================= */
+        const particleIcons = ['💖', '✨', '👑', '🌸', '⭐', '🎀', '💌', '🌷', '💕'];
+
+        function triggerHeartBurst(event) {
+            const x = event.clientX || window.innerWidth / 2;
+            const y = event.clientY || window.innerHeight / 2;
+
+            for (let i = 0; i < 28; i++) {
+                setTimeout(() => {
+                    createParticle(x + (Math.random() * 80 - 40), y + (Math.random() * 80 - 40));
+                }, i * 35);
+            }
+        }
+
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.className = 'floating-particle text-2xl select-none';
+            particle.textContent = particleIcons[Math.floor(Math.random() * particleIcons.length)];
+
+            // Randomize trajectories
+            const dx = (Math.random() - 0.5) * 260 + 'px';
+            const dy = (Math.random() * 220 + 120) + 'px';
+            const scale = (Math.random() * 0.9 + 0.6).toFixed(2);
+            const rot = (Math.random() * 360 - 180) + 'deg';
+
+            particle.style.left = `${x}px`;
+            particle.style.top = `${y}px`;
+            particle.style.setProperty('--dx', dx);
+            particle.style.setProperty('--dy', dy);
+            particle.style.setProperty('--scale', scale);
+            particle.style.setProperty('--rot', rot);
+
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 2500);
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            renderChecklist();
+        };
+    </script>
+</body>
+</html>
